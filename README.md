@@ -10,9 +10,6 @@ the gross salary, and also detailed what are the related taxes to the state.</p>
 
 <p>The program has also implemented a reset option to recalculate new values, for gross or net.</p>
 
-Demo 
-
-![SalaryCalculator](https://github.com/marinelpuia/SalaryCalculator/assets/24518404/b44a6a89-b48c-4abf-b3ec-3d401a6ab9d9)
 
 Net Salary Demo
 
@@ -26,6 +23,10 @@ Gross Salary Demo
 Reset UI Demo
 
 ![reset_ui_demo](https://github.com/marinelpuia/SalaryCalculator/assets/24518404/96513446-4534-43d6-8724-c4a391bf11d0)
+
+Demo 
+
+![SalaryCalculator](https://github.com/marinelpuia/SalaryCalculator/assets/24518404/b44a6a89-b48c-4abf-b3ec-3d401a6ab9d9)
 
 
 
