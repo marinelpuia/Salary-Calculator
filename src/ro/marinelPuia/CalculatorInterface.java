@@ -9,10 +9,8 @@ import java.time.format.DateTimeFormatter;
 
 public class CalculatorInterface {
 
-    DataCore dataCore = new DataCore(25d,10d,0d,
-            10d,2.25d);
-    CalculateBrutSalary calculateBrutSalary = new CalculateBrutSalary(0d,25d,10d,
-            2.25d);
+    DataCore dataCore = new DataCore(25d,10d,0d,10d,2.25d);
+    CalculateBrutSalary calculateBrutSalary = new CalculateBrutSalary(0d,25d,10d,2.25d);
 
     private final JFrame mainWindow;
 
