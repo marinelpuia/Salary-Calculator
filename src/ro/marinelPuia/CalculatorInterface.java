@@ -45,7 +45,7 @@ public class CalculatorInterface {
     CalculatorInterface() {
 
         // ------ CREATE THE MAIN WINDOW ------
-        mainWindow = new JFrame("SALARY CALCULATOR BY MARINEL");
+        mainWindow = new JFrame("Romanian salary calculator");
         mainWindow.setLayout(null);
         mainWindow.setVisible(true);
         mainWindow.setSize(1200, 765);
@@ -71,7 +71,7 @@ public class CalculatorInterface {
 
         // ------ INTRODUCTION JLabel PANEL ------
         JPanel introductionJLabelPanel = new JPanel();
-        introductionJLabelPanel.setBounds(100, 102, 1000, 35);
+        introductionJLabelPanel.setBounds(100, 101, 1000, 35);
         introductionJLabelPanel.setBackground(Color.GRAY);
         container.add(introductionJLabelPanel);
 
@@ -88,9 +88,9 @@ public class CalculatorInterface {
         introductionJLabelPanel.add(introductionJLabel);
         introductionJLabelPanel.revalidate();
 
-        // ------ GET USER NET AND BRUT SALARY PANEL ------
+        // ------ USER NET AND BRUT SALARY PANEL ------
         JPanel introNetAndBrutSalaryPanel = new JPanel();
-        introNetAndBrutSalaryPanel.setBounds(100, 139, 1000, 50);
+        introNetAndBrutSalaryPanel.setBounds(100, 136, 1000, 50);
         introNetAndBrutSalaryPanel.setLayout(new GridLayout(2, 2));
         introNetAndBrutSalaryPanel.setBackground(Color.GRAY);
         container.add(introNetAndBrutSalaryPanel);
