@@ -81,7 +81,7 @@ public class CalculatorInterface {
         introductionJLabel.setBackground(Color.GRAY);
         introductionJLabel.setHorizontalAlignment(SwingConstants.CENTER);
         introductionJLabel.setVerticalAlignment(SwingConstants.CENTER);
-        introductionJLabel.setText("BRUT TO NET - OR - NET TO BRUT");
+        introductionJLabel.setText("GROSS TO NET - OR - NET TO GROSS");
         introductionJLabel.setFont(mainFont);
         introductionJLabel.setForeground(Color.LIGHT_GRAY);
         introductionJLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -99,7 +99,7 @@ public class CalculatorInterface {
         // ------ BRUT SALARY LABEL ------
         JLabel userInputBrutSalaryLabel = new JLabel();
         userInputBrutSalaryLabel.setBackground(Color.GRAY);
-        userInputBrutSalaryLabel.setText("ENTER YOUR BRUT SALARY");
+        userInputBrutSalaryLabel.setText("ENTER YOUR GROSS SALARY");
         userInputBrutSalaryLabel.setForeground(Color.LIGHT_GRAY);
         userInputBrutSalaryLabel.setHorizontalAlignment(SwingConstants.CENTER);
         userInputBrutSalaryLabel.setVerticalAlignment(SwingConstants.CENTER);
@@ -119,7 +119,7 @@ public class CalculatorInterface {
         // ------ USER INPUT BRUT SALARY ------
         userInputBrutSalary = new JTextField();
         userInputBrutSalary.setPreferredSize(new Dimension(230, 22));
-        userInputBrutSalary.setText("Enter Your Brut");
+        userInputBrutSalary.setText("Enter Your Gross");
         userInputBrutSalary.setBackground(Color.LIGHT_GRAY);
         userInputBrutSalary.setForeground(Color.BLUE);
         userInputBrutSalary.setCaretColor(Color.BLUE);
@@ -408,7 +408,7 @@ public class CalculatorInterface {
         // ------ CALCULATE BRUT BUTTON ------
         calculateBrutButton = new JButton();
         calculateBrutButton.setBounds(500, 500, 420, 25);
-        calculateBrutButton.setText("CALCULATE BRUT");
+        calculateBrutButton.setText("CALCULATE GROSS");
         calculateBrutButton.setBackground(Color.LIGHT_GRAY);
         calculateBrutButton.setFont(mainFont);
         calculateBrutButton.setForeground(Color.GRAY);
