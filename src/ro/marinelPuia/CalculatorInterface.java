@@ -9,8 +9,8 @@ import java.time.format.DateTimeFormatter;
 
 public class CalculatorInterface {
 
-    DataCore dataCore = new DataCore(25d,10d,0d,10d,2.25d);
-    CalculateBrutSalary calculateBrutSalary = new CalculateBrutSalary(0d,25d,10d,2.25d);
+    DataCore dataCore = new DataCore(25d, 10d, 0d, 10d, 2.25d);
+    CalculateBrutSalary calculateBrutSalary = new CalculateBrutSalary(0d, 25d, 10d, 2.25d);
 
     private final JFrame mainWindow;
 
@@ -45,9 +45,10 @@ public class CalculatorInterface {
     CalculatorInterface() {
 
         // ------ CREATE THE MAIN WINDOW ------
-        mainWindow = new JFrame("Romanian salary calculator");
+        mainWindow = new JFrame("Today Date: " + dtf.format(now));
         mainWindow.setLayout(null);
         mainWindow.setVisible(true);
+        mainWindow.setFont(mainFont);
         mainWindow.setSize(1200, 765);
         mainWindow.setLocationRelativeTo(null);
         mainWindow.getContentPane().setBackground(Color.DARK_GRAY);
@@ -136,25 +137,25 @@ public class CalculatorInterface {
         introNetAndBrutSalaryPanel.add(userInputNetSalary);
         userInputNetSalary.revalidate();
 
-        // ------ SHOW DATE PANEL ------
-        JPanel datePanel = new JPanel();
-        datePanel.setBounds(100, 195, 1000, 25);
-        datePanel.setBackground(Color.GRAY);
-        container.add(datePanel);
-        datePanel.revalidate();
+        // ------ EMPLOYEE PANEL ------
+        JPanel employeePanel = new JPanel();
+        employeePanel.setBounds(100, 205, 1000, 25);
+        employeePanel.setBackground(Color.GRAY);
+        container.add(employeePanel);
+        employeePanel.revalidate();
 
-        // ------ DATE LABEL ------
-        JLabel date = new JLabel();
-        date.setForeground(Color.WHITE);
-        date.setHorizontalAlignment(SwingConstants.CENTER);
-        date.setVerticalAlignment(SwingConstants.CENTER);
-        date.setText("CURRENT DATE IS:  " + dtf.format(now));
-        datePanel.add(date);
-        datePanel.repaint();
-        date.revalidate();
+        // ------ EMPLOYEE LABEL ------
+        JLabel employee = new JLabel();
+        employee.setForeground(Color.WHITE);
+        employee.setHorizontalAlignment(SwingConstants.CENTER);
+        employee.setVerticalAlignment(SwingConstants.CENTER);
+        employee.setText("EMPLOYEE");
+        employeePanel.add(employee);
+        employeePanel.repaint();
+        employee.revalidate();
 
         // ------ RESULT BRUT SALARY AND CAS PANEL ------
-        JPanel brutAndCasPanel= new JPanel();
+        JPanel brutAndCasPanel = new JPanel();
         brutAndCasPanel.setBounds(100, 230, 1000, 50);
         brutAndCasPanel.setLayout(new GridLayout(2, 2));
         brutAndCasPanel.setBackground(Color.BLACK);
@@ -179,8 +180,8 @@ public class CalculatorInterface {
 
         // ------ RESULT CASS AND DP (DEDUCERE PERSONALA) PANEL ------
         JPanel cassAndDpPanel = new JPanel();
-        cassAndDpPanel.setBounds(100,280,1000,50);
-        cassAndDpPanel.setLayout(new GridLayout(2,2));
+        cassAndDpPanel.setBounds(100, 280, 1000, 50);
+        cassAndDpPanel.setLayout(new GridLayout(2, 2));
         cassAndDpPanel.setBackground(Color.BLACK);
         container.add(cassAndDpPanel);
         cassAndDpPanel.revalidate();
@@ -203,8 +204,8 @@ public class CalculatorInterface {
 
         // ------ RESULT IMPOZIT PE VENT AND NET SALARY PANEL ------
         JPanel inpozitAndNetSalaryPanel = new JPanel();
-        inpozitAndNetSalaryPanel.setBounds(100,330,1000,50);
-        inpozitAndNetSalaryPanel.setLayout(new GridLayout(2,2));
+        inpozitAndNetSalaryPanel.setBounds(100, 330, 1000, 50);
+        inpozitAndNetSalaryPanel.setLayout(new GridLayout(2, 2));
         inpozitAndNetSalaryPanel.setBackground(Color.BLACK);
         container.add(inpozitAndNetSalaryPanel);
         inpozitAndNetSalaryPanel.revalidate();
@@ -245,8 +246,8 @@ public class CalculatorInterface {
 
         // ------ RESULT CAM AND NET COMPLET SALARY PANEL ------
         JPanel casAndCompletSalaryPanel = new JPanel();
-        casAndCompletSalaryPanel.setBounds(100,407,1000,50);
-        casAndCompletSalaryPanel.setLayout(new GridLayout(2,2));
+        casAndCompletSalaryPanel.setBounds(100, 407, 1000, 50);
+        casAndCompletSalaryPanel.setLayout(new GridLayout(2, 2));
         casAndCompletSalaryPanel.setBackground(Color.BLACK);
         container.add(casAndCompletSalaryPanel);
         casAndCompletSalaryPanel.revalidate();
@@ -287,8 +288,8 @@ public class CalculatorInterface {
 
         // ------ RESULT TOTAL TAXE CHILDREN PANEL ------
         JPanel totalTaxeChildrenPanel = new JPanel();
-        totalTaxeChildrenPanel.setBounds(100,482,1000,100);
-        totalTaxeChildrenPanel.setLayout(new GridLayout(4,2));
+        totalTaxeChildrenPanel.setBounds(100, 482, 1000, 100);
+        totalTaxeChildrenPanel.setLayout(new GridLayout(4, 2));
         totalTaxeChildrenPanel.setBackground(Color.BLACK);
         container.add(totalTaxeChildrenPanel);
         totalTaxeChildrenPanel.revalidate();
@@ -355,8 +356,8 @@ public class CalculatorInterface {
 
         // ------ CALCULATE NET BUTTON PANEL ------
         JPanel calculateButtonPanel = new JPanel();
-        calculateButtonPanel.setBounds(100,645, 1000, 45);
-        calculateButtonPanel.setLayout(new GridLayout(1,3));
+        calculateButtonPanel.setBounds(100, 645, 1000, 45);
+        calculateButtonPanel.setLayout(new GridLayout(1, 3));
         calculateButtonPanel.setBackground(Color.BLACK);
         container.add(calculateButtonPanel);
         calculateButtonPanel.repaint();
@@ -483,6 +484,8 @@ public class CalculatorInterface {
         resetButton.repaint();
         resetButton.revalidate();
     }
+
+
     /*
      * ------ Handler the CalculateButtonNetSalary ------
      */
@@ -490,25 +493,25 @@ public class CalculatorInterface {
 
         public void actionPerformed(ActionEvent event) {
 
-                String currency = " Lei";
-                dataCore.salariuBrut = Double.parseDouble(userInputBrutSalary.getText());
+            String currency = " Lei";
+            dataCore.salariuBrut = Double.parseDouble(userInputBrutSalary.getText());
 
-                brutLabel.setText("Gross salary = " + Math.round(dataCore.salariuBrut) + currency);
-                casLabel.setText("Social insurance (CAS) " + dataCore.getAsigurariSociale() + "% = " + Math.round(dataCore.asigurareSociala()) + currency);
-                cassLabel.setText("Social health insurance (CASS) " + dataCore.getAsigurariSocialeDeSanatate() + "% = " +
-                        Math.round(dataCore.asigurariSocialeDeSanatate()) + currency);
-                dpLabel.setText("Personal deduction (PD) = " + dataCore.getPersonalDeduction() + currency);
-                inpozitLabel.setText("Income tax (IV) " + dataCore.getImpozitPeVenit() + "% = " + Math.round(dataCore.cuantumImpozit()) + currency);
-                netSalaryLabel.setText("Net salary = " + Math.round(dataCore.netSalary()) + currency);
-                camLabel.setText("Work insurance contribution (CAM) = " + Math.round(dataCore.cuantumCam()) + currency);
-                completSalaryLabel.setText("Full salary = " + Math.round(dataCore.cuantumCompletSalary()) + currency);
-                childAngajatLabel.setText("The employee pays the state = " + Math.round(dataCore.childAngajatLabel()) + currency);
-                childAngajatorLabel.setText("The employer pays the state = " + Math.round(dataCore.cuantumCam()) + currency);
-                childStatLabel.setText("Total taxes collected by the state = " + Math.round(dataCore.childStatLabel()) + currency);
-                childCheltuieliAngajat.setText("To pay a net salary of (" + Math.round(dataCore.netSalary()) + currency + "), the employer spends (" +
-                        Math.round(dataCore.cuantumCompletSalary()) + currency + ")");
-                procentAngajatLabel.setText(dataCore.laSutaCatreAngajat() + "% Employee");
-                procentStatLabel.setText(dataCore.laSutaCatreStat() + "% State");
+            brutLabel.setText("Gross salary = " + Math.round(dataCore.salariuBrut) + currency);
+            casLabel.setText("Social insurance (CAS) " + dataCore.getAsigurariSociale() + "% = " + Math.round(dataCore.asigurareSociala()) + currency);
+            cassLabel.setText("Social health insurance (CASS) " + dataCore.getAsigurariSocialeDeSanatate() + "% = " +
+                    Math.round(dataCore.asigurariSocialeDeSanatate()) + currency);
+            dpLabel.setText("Personal deduction (PD) = " + dataCore.getPersonalDeduction() + currency);
+            inpozitLabel.setText("Income tax (IV) " + dataCore.getImpozitPeVenit() + "% = " + Math.round(dataCore.cuantumImpozit()) + currency);
+            netSalaryLabel.setText("Net salary = " + Math.round(dataCore.netSalary()) + currency);
+            camLabel.setText("Work insurance contribution (CAM) = " + Math.round(dataCore.cuantumCam()) + currency);
+            completSalaryLabel.setText("Full salary = " + Math.round(dataCore.cuantumCompletSalary()) + currency);
+            childAngajatLabel.setText("The employee pays the state = " + Math.round(dataCore.childAngajatLabel()) + currency);
+            childAngajatorLabel.setText("The employer pays the state = " + Math.round(dataCore.cuantumCam()) + currency);
+            childStatLabel.setText("Total taxes collected by the state = " + Math.round(dataCore.childStatLabel()) + currency);
+            childCheltuieliAngajat.setText("To pay a net salary of (" + Math.round(dataCore.netSalary()) + currency + "), the employer spends (" +
+                    Math.round(dataCore.cuantumCompletSalary()) + currency + ")");
+            procentAngajatLabel.setText(dataCore.laSutaCatreAngajat() + "% Employee");
+            procentStatLabel.setText(dataCore.laSutaCatreStat() + "% State");
         }
     }
 
@@ -553,7 +556,7 @@ public class CalculatorInterface {
      */
     private class ResetButton implements ActionListener {
 
-        public void actionPerformed(ActionEvent event){
+        public void actionPerformed(ActionEvent event) {
             //JOptionPane.showMessageDialog(null , "The last amount calculated was " + userInputBrutSalary.getText());
             userInputBrutSalary.setText("0");
             userInputNetSalary.setText("0");

@@ -31,9 +31,6 @@ public class CalculateBrutSalary extends DataCore {
         this.contributionInsuranceForWork = contributionInsuranceForWork;
     }
 
-/*    public double getNet() {
-        return net;
-    }*/
     public double getTax() {
         return tax;
     }
@@ -42,17 +39,10 @@ public class CalculateBrutSalary extends DataCore {
         return (net * tax) / 90;
     }
 
-/*    public double getTaxableIncome() {
-        return net + taxCalculated;
-    }*/
 
     public double getPersonalDeduction() {
         return this.personalDeduction;
     }
-
-/*    public double getNetIncome() {
-        return net + taxCalculated;
-    }*/
 
     public double getCas() {
         return this.cas;
@@ -65,24 +55,6 @@ public class CalculateBrutSalary extends DataCore {
     public double getContributionInsuranceForWork() {
         return this.contributionInsuranceForWork;
     }
- /*   public double getTotalContributions() {
-        return totalContributions;
-    }
-
-    public double getLeftFrom100Percent() {
-        return leftFrom100Percent;
-    }
-    public double getTotalEmployerExpenses() {
-        return totalEmployerExpenses;
-    }
-
-    public double getGrossIncome() {
-       return grossIncome;
-    }
-
-    public double getGrossTotal() {
-       return grossTotal;
-    }*/
 
     public double getDeducereaPersonala() {
         return personalDeduction;
@@ -99,7 +71,6 @@ public class CalculateBrutSalary extends DataCore {
     }
 
     public double asigurareSocialaDeSanatate() {
-        //double sutaLaSuta = 100;
         double net = Double.parseDouble(userInputNetSalary.getText());
         double impozit = (net *10) / 90;
         double venitNet =  net + impozit;
@@ -134,7 +105,6 @@ public class CalculateBrutSalary extends DataCore {
         double venitBrut = venitNet + totalCheltuieliAngajator;
         double cuantumCas = (cas / 100) * venitBrut;
         double cuantumCass = (cass / 100) * venitBrut;
-        //double cuantumCam = ((contributieAsiguratoriePentruMunca / 100) * venitBrut);
         return cuantumCas + cuantumCass + impozit;
     }
 
